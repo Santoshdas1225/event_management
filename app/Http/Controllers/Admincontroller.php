@@ -12,13 +12,15 @@ class Admincontroller extends Controller
 {
     public function allcustomer()
     {
+        if(Session::get('email') == '' || Session::get('email') == null || Session::get('user_type') !== 'admin'){
+			return redirect('/login');
+		}
         $customers = Customer::all();
         return view('admin.allcustomer',compact('customers'));
     }
 
     public function toggleStatus(Request $request)
     {
-   
         $customerId = $request->id;
         $status = $request->status;
 
@@ -34,6 +36,9 @@ class Admincontroller extends Controller
 
     public function deletecustomer($id)
 	{
+        if(Session::get('email') == '' || Session::get('email') == null || Session::get('user_type') !== 'admin'){
+			return redirect('/login');
+		}
 		
 		$data = Customer::where('id', $id)->count();
 
@@ -44,12 +49,18 @@ class Admincontroller extends Controller
 	}
     public function allevent()
 	{
+        if(Session::get('email') == '' || Session::get('email') == null || Session::get('user_type') !== 'admin'){
+			return redirect('/login');
+		}
         $events = Event::all();
         return view('admin.allevent',compact('events'));
 	}
     
     public function deleteevent($id)
     {
+        if(Session::get('email') == '' || Session::get('email') == null || Session::get('user_type') !== 'admin'){
+			return redirect('/login');
+		}
         $data = Event::where('id', $id)->count();
         if ($data > 0) {
             Event::where('id', $id)->delete();
@@ -59,6 +70,9 @@ class Admincontroller extends Controller
 
     public function allbooking()
 	{
+        if(Session::get('email') == '' || Session::get('email') == null || Session::get('user_type') !== 'admin'){
+			return redirect('/login');
+		}
         $bookings = Booking::join('events', 'bookings.event_id', '=', 'events.id')
         ->select('bookings.*', 'events.event_name')
         ->get();
@@ -67,6 +81,9 @@ class Admincontroller extends Controller
     
     public function deletebooking($id)
     {
+        if(Session::get('email') == '' || Session::get('email') == null || Session::get('user_type') !== 'admin'){
+			return redirect('/login');
+		}
         $data = Booking::where('id', $id)->count();
         if ($data > 0) {
             Booking::where('id', $id)->delete();
