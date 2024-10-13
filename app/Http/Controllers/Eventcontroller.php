@@ -176,9 +176,11 @@ class Eventcontroller extends Controller
         if(Session::get('email') == '' || Session::get('email') == null){
 			return redirect('/login');
 		}
-        $events = Event::get();
+        $events = Event::where('user_id',Session::get('id'))->get();
+        $customercount = Booking::where('is_paid',1)->count();
+        $totalsell = Payment::where('user_id', Session::get('id'))->sum('total_amount');
         $eventCount = $events->count(); 
-        return view('userdashboard',compact('events','eventCount'));   
+        return view('userdashboard',compact('events','eventCount','customercount','totalsell'));   
     }
     public function addevent(Request $res)
     {

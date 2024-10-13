@@ -54,16 +54,14 @@
                                 <div class="col-6">
                                     <span class="text-muted mb-3 lh-1 d-block text-truncate">Total attendee</span>
                                     <h4 class="mb-3">
-                                        <span class="counter-value" data-target="6258">0</span>
+                                        <span class="counter-value" data-target="6258">{{$customercount}}</span>
                                     </h4>
                                 </div>
-                                <div class="col-6">
-                                    <div id="mini-chart2" data-colors='["#5156be"]' class="apex-charts mb-2"></div>
-                                </div>
+                                
                             </div>
                             <div class="text-nowrap">
-                                <span class="badge bg-soft-danger text-danger">-29 Trades</span>
-                                <span class="ms-1 text-muted font-size-13">Since last week</span>
+                                <span class="badge bg-soft-danger text-danger"></span>
+                                <span class="ms-1 text-muted font-size-13"></span>
                             </div>
                         </div><!-- end card body -->
                     </div><!-- end card -->
@@ -78,16 +76,14 @@
                                 <div class="col-6">
                                     <span class="text-muted mb-3 lh-1 d-block text-truncate">Total Ticket sell</span>
                                     <h4 class="mb-3">
-                                        $<span class="counter-value" data-target="4.32">0</span>M
+                                        <span class="counter-value">₹{{$totalsell}}</span>
                                     </h4>
                                 </div>
-                                <div class="col-6">
-                                    <div id="mini-chart3" data-colors='["#5156be"]' class="apex-charts mb-2"></div>
-                                </div>
+                                
                             </div>
                             <div class="text-nowrap">
-                                <span class="badge bg-soft-success text-success">+ $2.8k</span>
-                                <span class="ms-1 text-muted font-size-13">Since last week</span>
+                                <span class="badge bg-soft-success text-success"></span>
+                                <span class="ms-1 text-muted font-size-13"></span>
                             </div>
                         </div><!-- end card body -->
                     </div><!-- end card -->
