@@ -183,7 +183,7 @@
                           </div>
                           <div class="right-side">
                             <div class="topic-text">Get in Touch</div>
-                            <p>If you have any work from me or any types of quries related to my tutorial, you can send me message from here. It's my pleasure to help you.</p>
+                          
                             <form action="{{url('/')}}/home" method="POST">
                               @csrf
                               <div class="input-box">
