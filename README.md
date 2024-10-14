@@ -65,9 +65,9 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 **
-Software Requirement
+## Software Requirement
 
-Laravel v11
-PHP v8.2
-XAMPP
-Use the project name as "event_mngt" after download**
+- 1.Laravel v11
+- 2.PHP v8.2
+- 3.XAMPP
+- 4.Use the project name as "event_mngt" after download**
